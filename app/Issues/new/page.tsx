@@ -1,12 +1,12 @@
 "use client"
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import SimpleMDE from "react-simplemde-editor";
-import { useForm, Controller } from "react-hook-form"
+import { useForm, Controller } from "react-hook-form";
 import "easymde/dist/easymde.min.css";
-import { TextField, Button, Callout, Text } from "@radix-ui/themes"
-import axios from "axios"
+import { TextField, Button, Callout, Text } from "@radix-ui/themes";
+import axios from "axios";
 import { useRouter } from 'next/navigation';
-import { zodResolver } from "@hookform/resolvers/zod"
+import { zodResolver } from "@hookform/resolvers/zod";
 import { createIssueSchema } from "../../validationIssueSchema";
 import { z } from "zod";
 import ErrorMessages from '@/app/components/ErrorMessages';
