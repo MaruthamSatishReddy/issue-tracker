@@ -6,8 +6,7 @@
     "dev": "next dev",
     "start": "next start",
     "lint": "next lint",
-    "build": "next build",
-    "postinstall": "prisma generate"
+    "build": "next build"
   },
   "dependencies": {
     "@types/node": "20.8.4",
