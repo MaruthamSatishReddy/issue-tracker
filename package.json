@@ -6,8 +6,9 @@
     "dev": "next dev",
     "start": "next start",
     "lint": "next lint",
-    "build": "next build",
-     "postinstall": "prisma generate"
+   "prisma:generate": "npx prisma generate",
+  "prisma:migrate": "npx prisma migrate deploy",
+  "build": "npm run prisma:generate && npm build"
   },
   "dependencies": {
     "@types/node": "20.8.4",
