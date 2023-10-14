@@ -5,7 +5,6 @@ import { useForm, Controller } from 'react-hook-form';
 import 'easymde/dist/easymde.min.css';
 import { TextField, Button, Callout, Text } from '@radix-ui/themes';
 import axios from 'axios';
-import { useRouter } from 'next/navigation';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { createIssueSchema } from '../../validationIssueSchema';
 import { z } from 'zod';
@@ -15,7 +14,7 @@ type IssueForm = z.infer<typeof createIssueSchema>;
 const NewIssuePage = () => {
     const [error, setError] = useState('');
     const [isSubmitting, setSubmitting] = useState(false);
-    const router = useRouter();
+    //const router = useRouter();
     const { register, control, handleSubmit, formState: { errors } } = useForm<IssueForm>({ resolver: zodResolver(createIssueSchema) })
     return (
         <div className='max-w-xl'>
@@ -26,7 +25,7 @@ const NewIssuePage = () => {
                 try {
                     setSubmitting(true);
                     await axios.post('/api/Issues', data);
-                    router.push("/Issues");
+                    // router.push("/Issues");
                 } catch (error) {
                     setSubmitting(false);
                     setError("An Error Occured")
@@ -45,4 +44,4 @@ const NewIssuePage = () => {
     )
 }
 
-export default NewIssuePage
+export default NewIssuePage;
