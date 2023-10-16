@@ -6,21 +6,21 @@
     "dev": "next dev",
     "start": "next start",
     "lint": "next lint",
-   "prisma:generate": "npx prisma generate",
-  "prisma:migrate": "npx prisma migrate deploy",
-  "build": "npm run prisma:generate && npm build"
+    "build": "next build"
   },
   "dependencies": {
     "@types/node": "20.8.4",
     "@types/react": "18.2.28",
     "@types/react-dom": "18.2.13",
     "autoprefixer": "10.4.16",
+    "delay": "^6.0.0",
     "eslint": "8.51.0",
     "eslint-config-next": "13.5.4",
     "next": "13.5.4",
     "postcss": "8.4.31",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-loading-skeleton": "^3.3.1",
     "tailwindcss": "3.3.3",
     "typescript": "5.2.2"
   }
