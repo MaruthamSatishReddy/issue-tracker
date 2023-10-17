@@ -13,12 +13,12 @@ const IssueDetailsPage = async ({ params }: Props) => {
     if (!issue) notFound();
     await delay(2000);
     return (
-        <div><Heading>{issue.title}</Heading>
+        <div className='max-w-xl'><Heading>{issue.title}</Heading>
             <Flex className="space-x-3" my="2">
                 <IssueStatusBadge status={issue.status} />
                 <Text>{issue.createdAt.toDateString()}</Text>
             </Flex>
-            <Card><ReactMarkdown className='prose'>{issue.description}</ReactMarkdown></Card>
+            <Card><ReactMarkdown className='prose space-x-3'>{issue.description}</ReactMarkdown></Card>
 
 
 
