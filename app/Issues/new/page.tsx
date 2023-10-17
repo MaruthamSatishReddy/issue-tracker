@@ -1,6 +1,7 @@
 "use client"
 import React, { useState } from 'react';
-import SimpleMDE from 'react-simplemde-editor';
+import dynamic from 'next/dynamic';
+
 import { useForm, Controller } from 'react-hook-form';
 import 'easymde/dist/easymde.min.css';
 import { TextField, Button, Callout, Text } from '@radix-ui/themes';
@@ -11,6 +12,7 @@ import { createIssueSchema } from '../../validationIssueSchema';
 import { z } from 'zod';
 import ErrorMessages from '@/app/components/ErrorMessages';
 import Spinner from '@/app/components/Spinner';
+const SimpleMDE = dynamic(() => import('react-simplemde-editor'), { ssr: false });
 type IssueForm = z.infer<typeof createIssueSchema>;
 const NewIssuePage = () => {
     const [error, setError] = useState('');
