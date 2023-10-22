@@ -17,7 +17,6 @@ const IssueDetailsPage = async ({ params }: Props) => {
         <Grid columns={{ initial: "1", md: "2" }} gap="5">
             <Box>
                 <IssueDetails issue={issue} />
-
             </Box>
             <Box>
                 <EditIssueButton issueId={issue.id} />

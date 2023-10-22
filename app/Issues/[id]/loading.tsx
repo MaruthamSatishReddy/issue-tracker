@@ -9,9 +9,6 @@ const LoadingIssueDetailsPage = () => {
                 <Skeleton width="8rem" />
             </Flex>
             <Card className='prose'><Skeleton count={3} /></Card>
-
-
-
         </Box>
     )
 }
