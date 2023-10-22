@@ -13,7 +13,8 @@ import { z } from 'zod';
 import ErrorMessages from '@/app/components/ErrorMessages';
 import Spinner from '@/app/components/Spinner';
 import { Issue } from '@prisma/client';
-const SimpleMDE = dynamic(() => import('react-simplemde-editor'), { ssr: false });
+import SimpleMDE from 'react-simplemde-editor';
+
 type IssueFormData = z.infer<typeof issueSchema>;
 
 const IssueForm = ({ issue }: { issue?: Issue }) => {
@@ -56,12 +57,12 @@ const IssueForm = ({ issue }: { issue?: Issue }) => {
                     control={control}
                     defaultValue={issue?.description}
                     render={({ field }) => (
-                        <SimpleMDE placeholder="Description" {...field} />
+                        <SimpleMDE placeholder="Description"  {...field} />
                     )}
                 />
                 <ErrorMessages>{errors.description?.message}</ErrorMessages>
                 <Button disabled={isSubmitting}>
-                    {issue ? 'Update Issue' : 'Submit New Issue'}{' '}
+                    {issue ? 'Update Issue' : 'Create Issue'}{' '}
                     {isSubmitting && <Spinner />}
                 </Button>
 
