@@ -28,16 +28,14 @@ const IssueForm = ({ issue }: { issue?: Issue }) => {
                 try {
                     setSubmitting(true);
                     if (issue) {
-                        console.log("Issue Patch:::" + issue);
-                        await axios.patch('/api/Issues/' + issue.id, data);
+                        await axios.patch('/api/issues/' + issue.id, data);
                     }
 
                     else {
-                        console.log("Issue Post:::" + issue);
-                        await axios.post('/api/Issues', data);
+                        await axios.post('/api/issues', data);
                     }
 
-                    router.push("/Issues");
+                    router.push("/issues");
                     router.refresh();
                 } catch (error) {
                     setSubmitting(false);

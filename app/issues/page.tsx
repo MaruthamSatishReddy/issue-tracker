@@ -27,7 +27,7 @@ const IssuesPage = async () => {
                         <Table.Row key={issue.id}>
 
                             <Table.Cell>
-                                <Link href={`/Issues/${issue.id}`}>
+                                <Link href={`/issues/${issue.id}`}>
                                     {issue.title}
                                 </Link></Table.Cell>
                             <Table.Cell>  <IssueStatusBadge status={issue.status} /></Table.Cell>

@@ -5,7 +5,7 @@ import Link from 'next/link';
 const EditIssueButton = ({ issueId }: { issueId: string }) => {
     return (
         <Button><Pencil2Icon />
-            <Link href={`/Issues/${issueId}/edit`}>Edit Issue</Link></Button>
+            <Link href={`/issues/${issueId}/edit`}>Edit Issue</Link></Button>
     )
 }
 
