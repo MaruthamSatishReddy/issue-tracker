@@ -9,7 +9,7 @@ import { z } from 'zod';
 import 'easymde/dist/easymde.min.css';
 import ErrorMessages from '@/app/components/ErrorMessages';
 import Spinner from '@/app/components/Spinner';
-import { Issue } from '@prisma/client';
+import { Issue } from '@prisma/client/';
 import SimpleMDE from 'react-simplemde-editor';
 import { useForm, Controller } from 'react-hook-form';
 type IssueFormData = z.infer<typeof issueSchema>;
