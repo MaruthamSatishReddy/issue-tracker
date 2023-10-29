@@ -1,5 +1,5 @@
 import { issueSchema } from "@/app/validationIssueSchema";
-import { PrismaClient } from '@prisma/client'
+import { PrismaClient } from '@prisma/client';
 
 import { NextRequest, NextResponse } from "next/server";
 const prisma = new PrismaClient()
@@ -24,6 +24,7 @@ export async function PATCH(request: NextRequest, { params }:{params:{id:string}
     return NextResponse.json(updateIssue);
 }
 export async function DELETE(request: NextRequest, { params }: { params: { id: string } }) {
+
     const issue= await prisma.issue.findUnique({
         where:{id:params.id}
     })
