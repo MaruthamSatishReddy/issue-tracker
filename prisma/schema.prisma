@@ -16,6 +16,8 @@ model Issue {
   status      Status   @default(OPEN)
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
+  assignedToUserId String? @db.ObjectId
+  assignedToUser User? @relation(fields: [assignedToUserId],references: [id])
 }
 
 enum Status {
@@ -25,7 +27,7 @@ enum Status {
 }
 
 model Account {
-  id  String        @id @default(auto()) @map("_id") @db.ObjectId
+  id  String         @id @default(auto()) @map("_id") @db.ObjectId
   userId             String  @db.ObjectId
   type               String
   provider           String
@@ -62,6 +64,7 @@ model User {
   image         String?
   accounts      Account[]
   sessions      Session[]
+  assignedIssues Issue[]
 
   @@map("users")
 }
