@@ -6,12 +6,15 @@ import delay from 'delay'
 import EditIssueButton from './EditIssueButton';
 import IssueDetails from './IssueDetails';
 import DeleteIssueButton from './DeleteIssueButton';
+import { getServerSession } from 'next-auth';
+import authOptions from '@/app/auth/authOptions';
 
 interface Props {
     params: { id: string }
 }
 const IssueDetailsPage = async ({ params }: Props) => {
     const issue = await prisma.issue.findUnique({ where: { id: params.id } });
+    const session = await getServerSession(authOptions);
     if (!issue) notFound();
     await delay(2000);
     return (
@@ -19,12 +22,13 @@ const IssueDetailsPage = async ({ params }: Props) => {
             <Box className="md:col-span-4">
                 <IssueDetails issue={issue} />
             </Box>
-            <Box>
+            {session && (<Box>
                 <Flex direction="column" gap="4">
                     <EditIssueButton issueId={issue.id} />
                     <DeleteIssueButton issueId={issue.id} />
                 </Flex>
-            </Box>
+            </Box>)}
+
 
         </Grid>
     )
