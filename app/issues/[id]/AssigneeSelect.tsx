@@ -35,4 +35,4 @@ const AssigneeSelect = ({ issue }: { issue: Issue }) => {
     )
 }
 
-export default AssigneeSelect
+export default AssigneeSelect;
